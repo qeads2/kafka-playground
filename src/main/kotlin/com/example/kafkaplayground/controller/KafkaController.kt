@@ -18,4 +18,9 @@ class KafkaController(
     ) {
         kafkaFacade.order(1, order.itemId)
     }
+
+    @PostMapping(value = ["/users"])
+    fun createUser() {
+        kafkaFacade.createUser()
+    }
 }

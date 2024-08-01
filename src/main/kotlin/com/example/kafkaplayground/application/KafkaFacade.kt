@@ -22,4 +22,8 @@ class KafkaFacade(
         kafkaProducer.send("myTopic", "Order created: ${created.id}")
         return created.id
     }
+
+    fun createUser() {
+        userService.createUser()
+    }
 }
