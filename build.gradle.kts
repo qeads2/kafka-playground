@@ -21,7 +21,8 @@ repositories {
 
 dependencies {
 
-    implementation(project(":client-kafka"))
+//    implementation(project(":client-kafka"))
+    implementation("org.springframework.kafka:spring-kafka")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
