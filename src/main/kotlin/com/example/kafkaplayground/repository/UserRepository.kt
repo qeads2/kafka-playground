@@ -2,5 +2,6 @@ package com.example.kafkaplayground.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface UserRepository: JpaRepository<UserEntity, Int>{
+interface UserRepository : JpaRepository<UserEntity, Int> {
+    fun findOneById(id: Int): UserEntity?
 }
