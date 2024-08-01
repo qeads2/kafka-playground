@@ -1,7 +1,6 @@
 # basic proerty for h2 db
 spring:
-  config:
-    import: kafka.yml
+
 
   h2:
     console:
@@ -12,6 +11,7 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -29,3 +29,7 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
