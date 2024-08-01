@@ -14,7 +14,7 @@ class KafkaController(
 ) {
     @PostMapping(value = ["/order"])
     fun order(
-        @RequestBody order: OrderItemDto
+        @RequestBody order: OrderItemDto,
     ) {
         kafkaFacade.order(1, order.itemId)
     }

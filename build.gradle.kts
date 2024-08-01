@@ -4,7 +4,6 @@ plugins {
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
     kotlin("plugin.jpa") version "1.9.24"
-
 }
 
 group = "com.example"
@@ -45,4 +44,10 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+val startKafka by tasks.creating(Exec::class) {
+    group = "kafka"
+    workingDir = file("${project.rootDir}/kafka")
+    commandLine("docker-compose", "up", "-d")
 }

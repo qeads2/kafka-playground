@@ -3,3 +3,4 @@ plugins {
 }
 rootProject.name = "kafka-playground"
 include("client-kafka")
+findProject(":client-kafka")?.name = "client-kafka"

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ItemService(
-    private val itemRepository: ItemRepository
+    private val itemRepository: ItemRepository,
 ) {
     fun decreaseStock(itemId: Int) {
         val item = itemRepository.findById(itemId).get()
