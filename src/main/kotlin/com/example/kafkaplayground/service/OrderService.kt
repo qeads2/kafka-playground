@@ -1,6 +1,6 @@
 package com.example.kafkaplayground.service
 
-import com.example.kafkaplayground.repository.OrderEntity
+import com.example.kafkaplayground.domain.OrderEntity
 import com.example.kafkaplayground.repository.OrderRepository
 import org.springframework.stereotype.Service
 

@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.repository
+package com.example.kafkaplayground.domain
 
 import jakarta.persistence.*
 
@@ -9,8 +9,8 @@ class ItemEntity(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int = 0,
     val name: String,
-    private var stock: Int
-) {
+    private var stock: Int,
+) : BaseEntity() {
     fun decreaseStock() {
         if (stock == 0) {
             throw RuntimeException("Stock is empty")

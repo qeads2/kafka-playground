@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.repository
+package com.example.kafkaplayground.domain
 
 import jakarta.persistence.*
 
@@ -11,5 +11,5 @@ class OrderEntity(
     @Column(name = "item_id")
     val itemId: Int,
     @Column(name = "user_id")
-    val userId: Int
-)
+    val userId: Int,
+) : BaseEntity()

@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.repository
+package com.example.kafkaplayground.domain
 
 import jakarta.persistence.*
 
@@ -10,7 +10,7 @@ class UserEntity(
     val id: Int = 0,
     val name: String,
     private var grade: Int = 0,
-) {
+) : BaseEntity() {
     fun getGrade(): Int = grade
 
     fun increaseGrade() {

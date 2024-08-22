@@ -3,6 +3,7 @@ package com.example.kafkaplayground.service
 import com.example.kafkaplayground.domain.OrderCompleted
 import com.example.kafkaplayground.kafka.KafkaProducer
 import com.example.kafkaplayground.repository.UserRepository
+import jakarta.transaction.Transactional
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.messaging.handler.annotation.Payload
 import org.springframework.stereotype.Service
@@ -12,7 +13,8 @@ class UserKafkaConsumer(
     private val userRepository: UserRepository,
     private val kafkaProducer: KafkaProducer,
 ) {
-    @KafkaListener(topics = ["orderCompleted"], groupId = "userService")
+    @Transactional
+    @KafkaListener(topics = ["orderCompleted"], groupId = "userService", containerFactory = "myContainerFactory")
     fun userOrderCompleted(
         @Payload event: OrderCompleted,
     ) {
