@@ -1,6 +1,7 @@
 package com.example.kafkaplayground.config
 
 import com.example.kafkaplayground.domain.OrderCompleted
+import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -21,6 +22,9 @@ class KafkaConsumerConfig {
         val errorHandlingDeserializer = ErrorHandlingDeserializer(deserializer)
 
         val props: MutableMap<String, Any> = HashMap()
+        props[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = "localhost:9092"
+        props[ConsumerConfig.AUTO_OFFSET_RESET_CONFIG] = "earliest"
+        props[ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG] = "false"
         return DefaultKafkaConsumerFactory(
             props,
             StringDeserializer(),

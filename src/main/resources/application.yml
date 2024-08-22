@@ -19,13 +19,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
-  kafka:
-    bootstrap-servers: localhost:9092
-    consumer:
-      group-id: myGroup123
-      auto-offset-reset: earliest
-#      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-deserializer: org.apache.kafka.common.serialization.StringSerializer
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
