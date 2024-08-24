@@ -1,6 +1,6 @@
-package com.example.kafkaplayground.repository
+package com.example.couponissue.repository
 
-import com.example.kafkaplayground.domain.UserCoupon
+import com.example.couponissue.domain.UserCoupon
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

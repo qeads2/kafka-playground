@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.domain
+package com.example.couponissue.domain
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

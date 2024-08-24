@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.domain.enums
+package com.example.couponissue.domain.enums
 
 enum class StockHistoryType {
     PLUS,

@@ -1,4 +1,4 @@
-package com.example.kafkaplayground.domain.enums
+package com.example.couponissue.domain.enums
 
 import jakarta.persistence.AttributeConverter
 import jakarta.persistence.Converter

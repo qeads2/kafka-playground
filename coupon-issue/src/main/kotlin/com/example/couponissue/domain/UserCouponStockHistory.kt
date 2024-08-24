@@ -1,7 +1,7 @@
-package com.example.kafkaplayground.domain
+package com.example.couponissue.domain
 
-import com.example.kafkaplayground.domain.enums.StockHistoryType
-import com.example.kafkaplayground.domain.enums.StockHistoryTypeConverter
+import com.example.couponissue.domain.enums.StockHistoryType
+import com.example.couponissue.domain.enums.StockHistoryTypeConverter
 import jakarta.persistence.Column
 import jakarta.persistence.Convert
 import jakarta.persistence.Entity

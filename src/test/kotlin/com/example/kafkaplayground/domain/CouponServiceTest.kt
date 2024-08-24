@@ -2,8 +2,6 @@ package com.example.kafkaplayground.domain
 
 import com.example.kafkaplayground.repository.CouponRedisRepository
 import com.example.kafkaplayground.repository.CouponRepository
-import com.example.kafkaplayground.repository.UserCouponRepository
-import com.example.kafkaplayground.repository.UserCouponStockHistoryRepository
 import com.example.kafkaplayground.service.CouponService
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.assertj.core.api.Assertions.assertThat
@@ -19,9 +17,9 @@ import kotlin.test.Test
 class CouponServiceTest(
     @Autowired private val couponService: CouponService,
     @Autowired private val couponRepository: CouponRepository,
-    @Autowired private val userCouponRepository: UserCouponRepository,
+    @Autowired private val userCouponRepository: com.example.couponissue.repository.UserCouponRepository,
     @Autowired private val couponRedisRepository: CouponRedisRepository,
-    @Autowired private val userCouponStockHistoryRepository: UserCouponStockHistoryRepository
+    @Autowired private val userCouponStockHistoryRepository: com.example.couponissue.repository.UserCouponStockHistoryRepository
 ) {
 
     @Test
@@ -32,7 +30,7 @@ class CouponServiceTest(
         couponService.assignCoupon(1, 1)
 
         val userCoupon = userCouponRepository.findAll().first()
-        assertThat(userCoupon.userId).isEqualTo(1)
+        assertThat(com.example.couponissue.domain.UserCoupon.userId).isEqualTo(1)
     }
 
     @Test

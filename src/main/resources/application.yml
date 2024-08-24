@@ -1,8 +1,5 @@
 # basic proerty for h2 db
 spring:
-  config:
-    import: kafka.yml
-
   h2:
     console:
       enabled: true
